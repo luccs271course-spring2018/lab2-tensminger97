@@ -2,7 +2,7 @@
 
 # Team project
 
-Work in teams of two
+Work in teams of two(Tay and Ben)
 
 # Objectives
 
