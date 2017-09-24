@@ -35,9 +35,9 @@ public class Main {
     final int funding = Integer.parseInt(fundingString);
     System.out.println("Looking for min funding " + funding);
   
-    // Runs the linear search on the array
-    final Optional<Integer> index3 = Search.findTeamMinFunding(array, funding);
-    checkTeamArrayIndex(array, index3);
+    // // Runs the linear search on the array
+    // final Optional<Integer> index3 = Search.findTeamMinFunding(array, funding);
+    // checkTeamArrayIndex(array, index3);
 
     // Runs the binary search on the array
     final Optional<Integer> index4 = Search.findTeamMinFundingFast(array, funding);

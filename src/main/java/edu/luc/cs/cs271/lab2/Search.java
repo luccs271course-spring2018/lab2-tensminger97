@@ -23,7 +23,16 @@ public class Search {
 
   /** Looks for the position of the named team in a list. */
   public static Optional<Integer> findTeamPosition(final List<Team> list, final String key) {
-    // TODO complete this method
+    //  complete this method
+    final int size = list.size();
+    for(int i = 0; i < size; i++)
+    {
+      String position = list.get(i).getName();
+      if(position.equals(key))
+      {
+        return Optional.of(i);
+      }
+    }
     return Optional.empty();
   }
   
@@ -34,7 +43,18 @@ public class Search {
    * @post arr[result].funding >= minFunding && for all 0 <= i < result : arr[i].funding < minFunding
    */
   public static Optional<Integer> findTeamMinFunding(final Team[] arr, final int minFunding) {
-    // TODO complete this method
+    // Done complete this method
+    final int size = arr.length;
+    int low = arr[size-1].getFunding();
+    for(int i = 0; i < size; i++)
+    {
+      int funding = arr[i].getFunding();
+      if(funding <= low && funding >= minFunding)
+      {
+        low = funding;
+      }
+      return Optional.of(i);
+    }
     return Optional.empty();
   }
   
@@ -54,13 +74,31 @@ public class Search {
     // Initially search the entire array
     int low = 0;
     int high = size - 1;
+    while(low < high)
+    {
     // Keep going as long as there is more than one item to be checked
     // Eliminate the wrong half of the array
+    int mid = (high + low)/2;
+    if(minFunding <= arr[mid].getFunding())
+    {
+      high = mid;
+    }
+    if(minFunding > arr[mid].getFunding())
+    {
+      low = mid +1;
+    }
+    else{
+      Optional.of(mid);
+    }
+    }
     // Return current item only if it meets the condition!
+
     if (low <= high && arr[low].getFunding() >= minFunding) {
+      
       return Optional.of(low);
     } else {
       return Optional.empty();
     }
+  
   }
 }
