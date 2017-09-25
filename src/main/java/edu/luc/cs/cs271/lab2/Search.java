@@ -45,17 +45,17 @@ public class Search {
   public static Optional<Integer> findTeamMinFunding(final Team[] arr, final int minFunding) {
     // Done complete this method
     final int size = arr.length;
-    int low = arr[size-1].getFunding();
     for(int i = 0; i < size; i++)
     {
       int funding = arr[i].getFunding();
-      if(funding <= low && funding >= minFunding)
+      if(funding >= minFunding)
       {
-        low = funding;
-      }
       return Optional.of(i);
+      }
     }
     return Optional.empty();
+    
+    
   }
   
   /** 
