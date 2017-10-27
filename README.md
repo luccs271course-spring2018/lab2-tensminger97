@@ -33,4 +33,4 @@ An understanding of the following concepts and techniques:
 - What happens in the case of binary search if the array is not sorted?
 - What is the purpose of constructor argument validity checking?
 - What is the purpose of using the keyword `final` with variables and arguments?
-- What are alternatives to using `Optional` and how do they compare?
+- What are alternatives to using `Optional` and how do they compare?# lab7-ensminger
